@@ -3,13 +3,6 @@
 //Action Toolbar Javascript
 
 //feedbackify part of action toolbar
-	var fby = fby || [];
-	(function () {
-	var f = document.createElement('script'); f.type = 'text/javascript'; f.async = true;
-	f.src = '//cdn.feedbackify.com/f.js';
-	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(f, s);
-	});
-
 
 	$(document).ready(function(){
 		var shareBarVisible = false;
@@ -54,7 +47,7 @@
 				sessionStorage.setItem('toolbarHidden', 'false');
 			}
 			if(addthis_loaded == false){
-				loadJS('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5796297c9cb7080d#async=1');
+				$.getScript('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5796297c9cb7080d');
 				addthis_loaded=true;
 			}
 		});
