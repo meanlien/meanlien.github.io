@@ -1,0 +1,1590 @@
+@charset "utf-8";
+/* CSS Document for Header, Main Nav Bar, and Footer */
+
+/*
+ * RESET FONT-SIZE TO 13px to match the body font-size in the princess-normalize.css.
+ * This is required for applications that don't use princess-normalize.css and that have a basic reset with a font-size < 13px.
+ * Hopefully, this can be removed in the future, once all applications are transitioned over princess-normalize or .
+ */
+#princess-header, #princess-footer {
+	font-size: 13px;
+	line-height: 1.3846;
+}
+#princess-header {
+	font-family:'Gotham SSm 4r', Arial, Helvetica, sans-serif;
+}
+#princess-header *, #princess-header *:before, #princess-header *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.gotham-xn-book {
+	font-family:'Gotham XNarrow SSm 4r', Arial, Helvetica, sans-serif;
+	letter-spacing: 1px;
+}
+.gotham-xn-bold {
+	font-family:'Gotham XNarrow SSm 7r', Arial, Helvetica, sans-serif;
+	letter-spacing: 1px;
+}
+.gotham-book {
+	font-family:'Gotham SSm 4r', Arial, Helvetica, sans-serif;
+}
+.gotham-medium {
+	font-family:'Gotham SSm 5r', Arial, Helvetica, sans-serif;
+}
+.gotham-bold {
+	font-family:'Gotham SSm 7r', Arial, Helvetica, sans-serif;
+}
+img {
+	border:0;
+}
+.container {
+	margin: 0 auto;
+}
+@media (min-width:640px) {
+	.container {
+		max-width: 768px;
+	}
+}
+@media (min-width:768px) {
+	.container {
+		max-width: 990px;
+	}
+}
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.img-responsive-wrapper {
+	position: relative;
+}
+.img-responsive, .img-responsive-wrapper img {
+	display: block;
+	height: auto;
+	margin: 0 auto;
+	max-width: 100%;
+}
+.web-font .font-weight-700 {
+	font-family:'Gotham SSm 7r', Arial, Helvetica, sans-serif;
+	font-weight: 400;
+}
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+
+
+/* Forcing table based layouts to align text to the left by default.*/
+#pb-main {
+    text-align: left;
+    margin: 0 auto;
+}
+
+
+/* =============================================================================
+   Header Bar
+   ========================================================================== */
+.headerbar {
+	color: #fff;
+}
+.headerbar, .headerbar > .container {
+	background: #0054A0;
+}
+@media screen and (max-width: 47.9375em) {
+	.headerbar {
+		padding-top: 50px;
+	}
+	.headerbar > .container {
+		overflow: hidden;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 1000;
+	}
+}
+.headerbar button {
+	background: transparent;
+	border: none;
+	margin: 0;
+}
+
+/*
+ * Header Bar Logo
+ */
+.headerbar-logo {
+	color: #fff;
+	display: block;
+	height: 36px;
+	margin: 7px auto;
+	overflow: hidden;
+	position: relative;
+	width: 77px;
+}
+.headerbar-logo > img {
+	left: -300px;
+	position: absolute;
+	top: 0;
+}
+
+/* fall back solution for browsers that don't support svg */
+.no-svg .headerbar-logo {
+	background-image: url(/images/global/princess-logo_h.png);
+	background-position: none;
+	background-position: 0 -300px;
+}
+.no-svg .headerbar-logo > img {
+	display: none;
+}
+
+@media screen and (min-width: 48em) {
+	/* for tablets, move the sea witch to the left */
+	.headerbar-logo {
+		float: left;
+		height: 27px;
+		margin: 6px 15px;
+		width: 60px;
+	}
+	.headerbar-logo > img {
+		left: 0;
+		top: -80px;
+	}
+	/* fall back solution for browsers that don't support svg */
+	.no-svg .headerbar-logo {
+		background-position: 0 -80px;
+	}
+}
+@media screen and (min-width: 60em) {
+	/* for desktops, hide the icon in the headerbar (will show in navbar) */
+	.headerbar-logo {
+		display: none;
+	}
+	/* for parts of the site that don't have the full navbar, we need to show the logo in the header bar */
+	.show-headerbar-logo .headerbar-logo {
+		display: block;
+		float: left;
+	}
+}
+
+/*
+ * Header Bar for non-pb ube's
+ */
+.non-pb .headerbar-logo {
+	margin-bottom: 12px;
+	margin-top: 12px;
+}
+@media screen and (max-width: 47.9375em) {
+	.non-pb .headerbar-logo {
+		float: left;
+		height: 26px;
+		margin-left: 15px;
+		margin-right: 15px;
+		width: 60px;
+	}
+	.non-pb .headerbar-logo > img {
+		top: -80px;
+	}
+}
+.headerbar-app {
+	float: right;
+	text-align: right;
+	padding: 10px 15px;
+	line-height: 1;
+}
+.onesource-app {
+	background: url(/images/global/sprite_header-nav-footer.png) no-repeat -40px -310px transparent;
+	height: 10px;
+	margin-bottom: 2px;
+	width: 105px;
+}
+.app-title {
+	text-transform: uppercase;
+	padding: 6px 0;
+}
+@media screen and (min-width: 30em) {
+	.app-title {
+		font-size: 1.384615384615385em;
+	}
+}
+.onesource-app + .app-title {
+	padding: 0;
+}
+
+
+/*
+ * Header Bar Buttons
+ */
+.headerbar-menu {
+	font-size: 0; /* setting the font-size to zero, to eliminate the spacing between the top level dropdown */
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+	text-align: right;
+}
+.headerbar-btn {
+	font-size: 13px; /* reset the font-size to the default size of 13px to ensure all relative sizes match up */
+}
+.headerbar-btn-link, .headerbar-touch-btn {
+	color: #fff;
+	display: block;
+	font-family:'Gotham SSm 4r', Arial, Helvetica, sans-serif;
+	line-height: 1.3847;
+	padding-left: 15px;
+	padding-right: 15px;
+	text-decoration: none;
+}
+.headerbar-btn-link {
+	padding-bottom: 11px;
+	padding-top: 11px;
+	white-space: nowrap;
+}
+.headerbar-touch-btn {
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+.headerbar-btn.site-search {
+	background: #002b50;
+	overflow: hidden;
+}
+.headerbar-site-search-text {
+	display: inline-block;
+	opacity: 0;
+	vertical-align: middle;
+	width: 0;
+}
+.headerbar-btn-link:hover .headerbar-site-search-text {
+	margin-left: .5em;
+	opacity: 1;
+	transition: opacity .3s;
+	width: auto;
+}
+.headerbar-btn-link:hover {
+	background: #004178;
+}
+.hide-headerbar-my-account .headerbar-btn.my-account,
+.hide-headerbar-email-offers .headerbar-btn.email-offers,
+.hide-headerbar-cruise-deals .headerbar-btn.cruise-deals,
+.hide-headerbar-saved-cruises .headerbar-btn.saved-cruises,
+.hide-headerbar-site-search .headerbar-btn.site-search,
+.hide-headerbar-call .headerbar-btn.call {
+	display: none;
+}
+
+@media screen and (max-width: 47.9375em) {
+	.headerbar-btn {
+		display: none;
+	}
+	.headerbar-btn.for-touch {
+		border: none;
+		display: block;
+		padding: 0;
+		position: absolute;
+		top: 0;
+	}
+	.headerbar-btn.call {
+		left: 0;
+	}
+	.headerbar-btn.menu {
+		right: 0;
+	}
+	.no-menu-btn .headerbar-btn.menu {
+		display: none;
+	}
+	.headerbar-touch-btn .pc-icons, .menu-icon {
+		display: block;
+		margin: 0 auto .25em;
+	}
+	.menu-icon {
+		height: 20px;
+		position: relative;
+		width: 25px;
+	}
+	.bar {
+		background: #fff;
+		height: 2px;
+		left: 0;
+		position: absolute;
+		-webkit-transition: all 100ms linear 0s;
+		-moz-transition: all 100ms linear 0s;
+		-o-transition: all 100ms linear 0s;
+		transition: all 100ms linear 0s;
+		width: 25px;
+	}
+	.top-bar {
+		top: 35%;
+	}
+	.bottom-bar {
+		bottom: 20%;
+	}
+	.menu > .expanded {
+		background: #004178;
+	}
+	.menu > .expanded .top-bar {
+		top: 50%;
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+	.menu > .expanded .bottom-bar {
+		bottom: 40%;
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+}
+
+@media screen and (min-width: 48em) {
+	.headerbar-btn {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.headerbar-btn.for-touch {
+		display: none;
+	}
+	.headerbar-btn-link .pc-icons {
+		display: inline-block;
+		margin: 0 .5em 0 0;
+		position: relative;
+		top: -1px;
+		vertical-align: middle;
+	}
+	.headerbar-btn-link .white-search-14 {
+		margin-right: 0;
+	}
+}
+@media print {
+	.headerbar {
+		display: none !important;
+		visibility: hidden;
+	}
+}
+
+
+/* =============================================================================
+   Header Site Search
+   ========================================================================== */
+.header-site-search {
+	background: #004178;
+	display: none;
+	padding: 0 15px;
+	width: 100%;
+}
+.header-site-search form {
+	position: relative;
+}
+.header-site-search .header-site-search-field {
+	display: block;
+	margin: 0;
+	padding: .76922307em 0;
+	position: relative;
+	width: 100%;
+}
+.header-site-search input[type="text"] {
+	border: 1px solid #999;
+	font-size: 100%;
+	line-height: 18px;
+	margin: 3px 0;
+	padding: 4px 27px 4px 4px ;
+	width: 100%;
+	transition: color 0.2s linear 0s, box-shadow 0.2s linear 0s;
+	vertical-align: baseline;
+}
+.header-site-search-btn {
+	border: none;
+	background: url(/images/global/sprite_pc-icons.svg) no-repeat -348px -150px transparent;
+	display: block;
+	height: 24px;
+	margin: 0;
+	overflow: hidden;
+	padding: 1px;
+	position: absolute;
+	right: 2px;
+	text-align: left;
+	text-indent: -999em;
+	top: 16px;
+	width: 23px;
+}
+@media screen and (max-width: 47.9375em) {
+	.close-header-site-search-btn {
+		display: none;
+	}
+	.header-site-search.visible-in-menu {
+		display: block;
+		position: fixed;
+		top: 50px;
+		transition: .75s top;
+		z-index: 999;
+	}
+	.header-site-search.unpinned {
+		top: -100px;
+	}
+}
+@media screen and (min-width: 48em) {
+	.close-header-site-search-btn {
+		border: none;
+	}
+	.header-site-search-container {
+		position: relative;
+	}
+	.header-site-search {
+		max-width: 600px;
+		position: absolute;
+		right: 0;
+		top: -40px;
+		z-index: 1000;
+	}
+	.header-site-search.visible {
+		display: block;
+	}
+	.header-site-search form {
+		float: left;
+		width: 100%;
+		max-width: 530px;
+	}
+	.header-site-search .header-site-search-field {
+		padding: 3px 0;
+	}
+	.header-site-search-btn {
+		right: 2px;
+		top: 8px;
+	}
+	.close-header-site-search-btn {
+		display: block;
+		float: right;
+		margin-top: 10px;
+	}
+}
+
+/*
+ * Text links below search box
+ */
+.header-search-cruises {
+	background: #668096;
+	color: #fff;
+	clear: both;
+	padding: 23px 15px;
+	margin: 0 -15px;
+}
+@media screen and (max-width: 47.9375em) {
+	.header-search-cruises {
+		display: none;
+		visibility: hidden;
+	}
+}
+.header-search-cruises, .header-search-cruises > a {
+	color: #fff;
+}
+.header-search-cruises > a {
+	display: inline-block;
+	padding: 0 15px;
+}
+.header-search-cruises > a + a {
+	border-left: 1px solid #fff
+}
+
+
+/* =============================================================================
+   Nav Bar
+   ========================================================================== */
+
+/*
+ * Logo in navbar
+ */
+.navbar-logo {
+	color: #fff;
+	display: none;
+	float: left;
+	height: 35px;
+	margin: 13px 15px;
+	overflow: hidden;
+	position: relative;
+	width: 290px;
+}
+.navbar-logo > img {
+	left: 0;
+	position: absolute;
+	top: -40px;
+}
+@media (min-width: 60em) {
+	.navbar-logo {
+		display: block;
+	}
+}
+
+
+/* fall back solution for browsers that don't support svg */
+.no-svg .navbar-logo {
+	background-image: url(/images/global/princess-logo_h.png);
+	background-position: none;
+	background-position: 0 0;
+}
+.no-svg .navbar-logo > img {
+	display: none;
+}
+
+/*
+ * Navbar container and top level buttons
+ */
+.navbar {
+	background: #fff;
+	border-bottom: 1px solid #ccc;
+}
+.navbar-wrapper {
+	margin: 0 auto;
+	position: relative;
+	max-width: 1280px;
+}
+@media screen and (max-width: 47.9375em) {
+	.navbar {
+		border-bottom: 5px solid #0054A0;
+		height: 0;
+		overflow: hidden;
+	}
+	.navbar-wrapper {
+		padding-top: 54px;
+	}
+}
+.navbar-wrapper > .container {
+	position: relative;
+}
+.navbar-menu {
+	font-size: 0; /* setting the font-size to zero, to eliminate the spacing between the top level dropdown */
+	margin: 0;
+}
+.navbar-dropdown {
+	font-size: 13px; /* reset the font-size to the default size of 13px to ensure all relative sizes match up */
+}
+/* top level buttons in navbar */
+@media screen and (min-width: 48em) and (max-width: 59.9375em) {
+	.navbar-menu {
+		text-align: center;
+	}
+	.navbar-dropdown {
+		display: inline-block;
+	}
+	.navbar-dropdown + .navbar-dropdown {
+		margin-left: 3.5%;
+	}
+}
+@media screen and (min-width: 60em) {
+	.navbar-menu {
+		text-align: right;
+	}
+	.navbar-dropdown {
+		display: inline-block;
+	}
+}
+
+/*
+ * Navbar dropdown layout
+ */
+.navbar-dropdown-menu {
+	background: #e5f3fd;
+	height: 0;
+	overflow: hidden;
+	position: relative;
+	text-align: left;
+	width: 100%;
+}
+.no-js .navbar-dropdown:hover > .navbar-dropdown-menu,
+.navbar-dropdown.expanded > .navbar-dropdown-menu {
+	height: auto;
+}
+.navbar-row {
+	position: relative;
+}
+.navbar-col {
+	/*line-height: 2.153846153846154; - why is this here?*/
+	padding-left: 4.04040404040404%;
+	padding-right: 4.04040404040404%;
+}
+.navbar-row-divider {
+	margin-bottom: 15px;
+	margin-top: 15px;
+	position: relative;
+	border-top: 1px solid #ccc;
+}
+.navbar-btn-row {
+	background: #f7fbfe;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	padding: 15px 0;
+	text-align: center;
+}
+.navbar-subhead {
+	font-family: 'Gotham XNarrow SSm 5r', Arial, Helvetica, sans-serif;
+	font-size: 1.230769230769231em;
+	letter-spacing: 1px;
+	margin-top: 1em;
+}
+.navbar-subhead:first-child {
+	margin-top: 0;
+}
+.navbar-subhead > .phone-nu {
+	white-space: nowrap;
+}
+@media screen and (max-width: 47.9375em) {
+	/* apply inset shadows in mobile view */
+	.no-js .navbar-dropdown:hover > .navbar-dropdown-menu,
+	.navbar-dropdown.expanded > .navbar-dropdown-menu {
+		box-shadow: inset 0 10px 10px -10px rgba(0,0,0,.5);
+	}
+	.no-js .navbar-dropdown:hover .navbar-dropdown-menu > div:last-child,
+	.navbar-dropdown.expanded .navbar-dropdown-menu > div:last-child {
+		box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,.5);
+	}
+	/* apply same padding sizes from left/right to the top/bottom for mobile view */
+	.navbar-col {
+		padding-bottom: 4.04040404040404%;
+		padding-top: 4.04040404040404%;
+	}
+	/* col-divider will be horizontal and full-width in mobile view */
+	.navbar-col-divider {
+		position: relative;
+		border-top: 1px solid #ccc;
+	}
+	/* hide responsive images in mobile view */
+	.navbar-dropdown-menu  .navbar-col > .img-responsive-wrapper {
+		display: none;
+	}
+}
+@media screen and (min-width: 48em) {
+	.navbar-row {
+		padding-bottom: 20px;
+		padding-top: 20px;
+	}
+	.navbar-dropdown-menu {
+		left: 0;
+		position: absolute;
+		top: -999em;
+		z-index: 1000;
+	}
+	.no-js .navbar-dropdown:hover > .navbar-dropdown-menu,
+	.navbar-dropdown.expanded > .navbar-dropdown-menu {
+		box-shadow: 0 5px 5px 0 rgba(0,0,0,.5);
+		top: 101%;
+	}
+	.navbar-col {
+		float: left;
+		width: 33.33333333333333%;
+	}
+	.navbar-col-divider {
+		bottom: 20px;
+		position: absolute;
+		top: 20px;
+		border-left: 1px solid #ccc;
+	}
+	.navbar-col-divider.left {
+		left: 33.33333333333333%;
+	}
+	.navbar-col-divider.right {
+		right: 33.33333333333333%;
+	}
+}
+
+/*
+ * Link styles in navbar
+ */
+.navbar-link, .navbar-btn-link,
+.navbar-link:focus, .navbar-btn-link:focus {
+	color: #0054A0;
+}
+.navbar-link {
+	text-align: left;
+	text-decoration: none;
+}
+.navbar-dropdown > .navbar-link {
+	background: #fff;
+	border-bottom: 1px solid #ccc;
+	display: block;
+	font-family:'Gotham XNarrow SSm 5r', Arial, Helvetica, sans-serif;
+	font-size: 1.230769230769231em;
+	letter-spacing: 1px;
+	padding: .5em 15px;
+}
+.navbar-dropdown-toggle > .pc-icons {
+	position: relative;
+	float: right;
+	top: 5px;
+}
+.navbar-dropdown-toggle:hover {
+	text-decoration: none;
+}
+.no-js .navbar-dropdown:hover > .navbar-link,
+.navbar-dropdown.expanded > .navbar-link {
+	background: #e5f3fd;
+}
+@media screen and (max-width: 47.9375em) {
+	.navbar-dropdown:first-child > .navbar-link  {
+		border-top: 1px solid #ccc;
+	}
+}
+@media screen and (min-width: 48em) {
+	.navbar-dropdown-toggle > .pc-icons {
+		display: none;
+	}
+	.navbar-dropdown > .navbar-link {
+		border-bottom: 2px solid #fff;
+		padding-bottom: 19px;
+		padding-top: 19px;
+	}
+	.no-js .navbar-dropdown:hover > .navbar-link,
+	.navbar-dropdown.expanded > .navbar-link {
+		border-bottom: 2px solid #0054A0;
+	}
+}
+.navbar-dropdown-menu .navbar-link {
+	display: block;
+	line-height: 1.384615384615385;
+	padding: .5em 0;
+}
+.navbar-dropdown-menu .navbar-link:hover {
+	text-decoration: underline;
+}
+.navbar-btn-row .navbar-btn-link {
+	padding: 10px 15px;
+}
+.navbar-btn-row .navbar-btn-link, .navbar-btn-row .button, .chat-btn {
+	display: inline-block;
+	text-decoration: none;
+}
+.navbar-btn-row .navbar-btn-link:hover {
+	text-decoration: underline;
+}
+.navbar-btn-row .button> .white-chat-bubbles-22, .chat-btn > .white-chat-bubbles-22 {
+	margin-left: 0;
+}
+.navbar-btn-row .navbar-btn-link > .pc-icons, .navbar-btn-row .button > .pc-icons, .chat-btn > .pc-icons {
+	display: inline-block;
+	margin-right: .5em;
+}
+.navbar-btn-row .cruise-with-me {
+	white-space: nowrap;
+	text-align: center;
+}
+.navbar-btn-row .chat-btn {
+	color: #fff;
+	margin-left: 1em;
+}
+@media screen and (max-width: 29.9375em) {
+	.navbar-btn-row .navbar-btn-link > .pc-icons {
+		display: block;
+		margin: 0 auto .5em;
+	}
+}
+@media screen and (max-width: 42.4375em) {
+	.navbar-btn-row .navbar-btn-link, .navbar-btn-row .button, .chat-btn {
+		display: block;
+	}
+	.navbar-btn-row .button {
+		max-width: 290px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+@media screen and (max-width: 51.9375em) {
+	.navbar-btn-row .cruise-with-me {
+		display: block;
+	}
+}
+
+/*
+ * Call center hours
+ */
+.call-center-hours > strong {
+	display: inline-block;
+	padding-top: .5em;
+}
+
+
+/* =============================================================================
+   Buttons in mobile view of navbar
+   ========================================================================== */
+/*
+ * Find a Cruise & Recently Viewed buttons at the bottom of the mobile view
+ */
+.navbar-search-cruises {
+	padding: 15px;
+	text-align: center;
+}
+@media screen and (min-width: 48em) {
+	.navbar-search-cruises {
+		display: none;
+		visibility: hidden;
+	}
+}
+.navbar-search-cruises > a {
+	display: inline-block;
+	max-width: 290px;
+	width: 100%;
+}
+.navbar-search-cruises > a + a {
+	margin-top: 10px;
+	padding: .3076em 1.1538em;
+}
+
+/*
+ * Button row at the top of the mobile menu
+ */
+.navbar-btn-menu {
+	background: #f1f1f1;
+	border-top: 1px solid #ccc;
+	color: #0054A0;
+	font-size: 0; /* setting the font-size to zero, to eliminate the spacing between the top level dropdown */
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+	text-align: center;
+	width: 100%;
+}
+@media screen and (min-width: 48em) {
+	.navbar-btn-menu {
+		display: none;
+		visibility: hidden;
+	}
+}
+.navbar-btn {
+	display: inline-block;
+	font-size: 13px; /* reset the font-size to the default size of 13px to ensure all relative sizes match up */
+}
+.navbar-btn + .navbar-btn {
+	margin-left: 3.5%;
+}
+.navbar-btn-menu-link {
+	color: #0054A0;
+	display: block;
+	line-height: 1.307692307692308;
+	padding: 10px;
+	text-decoration: none;
+}
+.navbar-btn-menu-link:hover {
+	background: #bfbfbf;;
+}
+.navbar-btn-menu-link .pc-icons {
+	display: block;
+	margin: 0 auto .25em;
+	vertical-align: middle;
+}
+
+
+/* =============================================================================
+   My Account dropdown in headerbar & mobile navbar
+   ========================================================================== */
+.my-account-welcome, .my-account-signout-btn, .my-account-link {
+	padding: .4em 15px;
+}
+.my-account-divider {
+	padding: .4em 0;
+}
+.my-account-signout-btn {
+	background: none;
+	border: none;
+	margin: 0;
+}
+.my-account-signout-btn, .my-account-link {
+	display: inline-block;
+	text-decoration: underline;
+}
+.my-account-signout-btn:hover, .my-account-link:hover  {
+	text-decoration: none;
+}
+
+@media screen and (max-width: 47.9375em) {
+	.headerbar .my-account-dropdown {
+		display: none;
+	}
+	.navbar .my-account-dropdown {
+		padding: .5em 0;
+		width: 100%;
+	}
+	.navbar .my-account-welcome {
+		float: left;
+	}
+	.navbar .my-account-link, .navbar .my-account-divider  {
+		float: right;
+	}
+}
+@media screen and (min-width: 48em) {
+	.navbar .my-account-dropdown {
+		display: none;
+	}
+	.headerbar .my-account {
+		position: relative;
+	}
+	.no-js .headerbar .my-account:hover > a,
+	.headerbar .my-account.expanded > a {
+		background: #004178;
+	}
+	.headerbar .my-account-dropdown {
+		background: #668096;
+		color: #fff;
+		position: absolute;
+		padding: .4em 0;
+		right: 0;
+		text-align: left;
+		top: -999em;
+		width: 18em;
+		z-index: 1000;
+	}
+	.no-js .my-account:hover > .my-account-dropdown,
+	.my-account.expanded > .my-account-dropdown {
+		top: 100%;
+	}
+	.headerbar .my-account-welcome {
+		padding-bottom: .25em;
+	}
+	.headerbar .my-account-welcome, .headerbar .my-account-signout-btn, .headerbar .my-account-link  {
+		color: #fff;
+	}
+}
+
+/* =============================================================================
+   Saved Cruises Icon
+   ========================================================================== */
+.headerbar-btn.saved-cruises > .headerbar-btn-link,
+.navbar-btn.saved-cruises > .navbar-btn-menu-link {
+	position: relative;
+}
+.saved-cruise-count {
+	background: #f05a28;
+	border-radius: 50%;
+	color: #fff;
+	display: none;
+	font-size: 10px;
+	line-height: 1;
+	padding: 4px 2px 4px 0;
+	position: absolute;
+	text-align: center;
+	width: 20px;
+}
+.navbar-btn-menu-link > .saved-cruise-count {
+	left: 10px;
+	top: 8px;
+}
+.headerbar-btn-link > .saved-cruise-count {
+	left: 1px;
+	top: 5px;
+}
+#content{
+	width: 100%;
+}
+/* ==========================================================================
+   ==========================================================================
+   ========================================================================== */
+
+
+/* =============================================================================
+   Princess Cruises Footer
+   ========================================================================== */
+#princess-footer-wrapper{
+ max-width: 1700px;
+ font-family: 'Gotham XNarrow SSm 4r', Arial, Helvetica, sans-serif !important;
+ background-color: #ffffff;
+}
+#princess-footer{
+ margin: 0px auto;
+ background-color: white;
+ font-family: 'Gotham XNarrow SSm 4r', Arial, Helvetica, sans-serif !important;
+ padding-bottom: 40px !important;
+ letter-spacing: 1px;
+}
+#footer-contact{
+ width: 100%;
+ font-size: 1.125em;
+ text-align: center;
+ background-color: #333333;
+ padding: 10px 0px;
+ margin: 0px auto;
+ position: relative;
+}
+.footer-contact{
+	max-width: 780px;
+	text-align: center;
+	margin: 0px auto;
+}
+.contact-link:hover{
+ text-decoration: underline;
+}
+#footer{
+ width:100%;
+ background-color: #54575a !important;
+}
+.inner-wrapper{
+ max-width: 960px;
+ margin: 0px auto;
+ background-color: #54575a !important;
+ padding: 20px 0px !important;
+}
+.black{
+ color: black;
+}
+.footerCol > .centerLeft > a{
+ text-decoration: none;
+ color: white;
+ font-size: 12px;
+}
+.footer-link-view{
+ text-decoration: none;
+}
+.footer-link-view > li > a:hover{
+   text-decoration: underline;
+}
+#footerViewNews:hover{
+	text-decoration: underline;
+}
+.footer-list-view{
+ list-style-type: none;
+ margin: 0px;
+ padding: 10px 0px 0px;
+}
+.footerCol{
+ display: inline-block;
+ vertical-align: top;
+ width: 33.3333%;
+ padding-bottom: 20px !important;
+ line-height: 1.5;
+ margin: 0px auto;
+ text-align: center;
+}
+.lastCol{
+	margin-right: -15px;
+}
+.centerLeft{
+	display: inline-block;
+	text-align: left;
+}
+.footerCol:first-child{
+	text-align: left;
+}
+.text-bold{
+ font-weight: bold;
+}
+.footer-news-follow{
+ max-width: 960px;
+ border-top: 1px solid #333333;
+ margin: 0px auto;
+}
+.footerNews{
+ display: inline-block;
+ width: 66.6666%;
+}
+.footerFollow{
+ display: inline-block;
+ vertical-align: top;
+ width: 32.75%;
+ margin: 0px -15px 0px 3px;
+ text-align: center;
+}
+.followLeft{
+	display: inline-block;
+	text-align: left;
+	margin-left: 20px;
+}
+.footer-link{
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+}
+.footerCircles{
+	float:left;
+}
+.footer-link:hover{
+ text-decoration: underline !important;
+}
+.footer-copyright{
+	font-family: "Gotham SSm 4r", Arial, Helvetica, sans-serif;
+	letter-spacing: -.25px;
+	font-size: 12px;
+ text-align: center;
+ max-width: 960px;
+ margin: 0px auto;
+ padding: 0px 15px;
+}
+.footer-contact-item + .footer-contact-item{
+ border-left: 1px solid white;
+}
+span.footer-contact-item {
+  padding: 0px 8px;
+}
+.footer-contact-item{
+	display: inline-block;
+}
+.footerRow{
+padding: 20px 0px 0px 0px;
+}
+.follow-button{
+	display: inline-block;
+	margin: 0px 5px 0px 0px;
+}
+.follow-button .pc-icons:hover{
+	opacity: .5;
+}
+.footerRow-thirdparty{
+	width: 95%;
+	text-align: center;
+}
+.footerRow-thirdparty{
+	width: 95%;
+}
+.thirdParty{
+	display: inline-block;
+	margin: 10px 20px;
+	padding: 0px;
+	width: auto;
+	vertical-align: middle;
+}
+#footer-ada {
+	padding-left: 0px;
+	margin-left: 0px;
+}
+.footerCircle {
+  cursor:pointer;
+  height: 10px;
+  width: 10px;
+  margin: 3px 10px 25px 0px;
+  background-color: #cccdce;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.8s ease;
+}
+.slide-button-active, .footerCircle:hover{
+	background-color: #ffffff;
+}
+
+.footer-text-fade{
+	-webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+.footer-buttons-news{
+	width: 65%;
+	height: 85px;
+	position: relative;
+	display: inline-block;
+}
+@-webkit-keyframes fade {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+@keyframes fade {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+.footerSlideView{
+	padding-top: 10px;
+	position: relative;
+	height: 75px;
+}
+.footer-slide:first-child{
+	display: block;
+}
+.footer-slide{
+	display: none;
+	padding-bottom: 0px;
+}
+.dotsAndNews{
+	width: 666.6666%;
+	margin: 0px;
+	padding: 0px;
+}
+.view-news{
+	margin: 0px;
+	padding: 0px;
+}
+.footer-slide-buttons{
+	float: left;
+}
+.footerLast{
+	margin-left: -15px;
+	padding-left: -15px;
+}
+.footer-slide-group{
+	font-family: "Gotham SSm 4r", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	letter-spacing: -.25px;
+}
+@media screen and (max-width: 1005px){
+	.footerRow{
+		margin: 0px 15px;
+	}
+}
+@media screen and (max-width: 900px){
+	.footer-contact-first{
+		display:block;
+	}
+	.contact-middle{
+		padding-left: 0px;
+	}
+	#contact-middle{
+		border: none;
+	}
+}
+@media screen and (max-width:767px){
+	.footerCol{
+			width: 95%;
+			text-align: left;
+	}
+	.followLeft{
+		width: 100%;
+		text-align: left;
+	}
+	.footer-news-follow{
+		width: 91%;
+		text-align: left;
+		margin-left: 15px;
+	}
+	#thirdPartySource{
+		display: block;
+	}
+	.lastCol{
+		max-width: 95%;
+		margin-left: 15px;
+		margin-bottom: -20px;
+	}
+	.footerNews{
+		width: 95%;
+		margin-right: 0px;
+	}
+	.footerFollow{
+		width: 95%;
+		margin-left: -18px;
+		text-align: left;
+	}
+	#footer-contact{
+		padding: 10px 0px;
+		margin: 0px;
+	}
+	.footerRow{
+		padding: 20px 0px;
+	}
+	.footer-contact-item + .footer-contact-item{
+	 border-left: none;
+	}
+	span.footer-contact-item {
+	  padding: 0px;
+	}
+	.footer-contact-item{
+		display: block;
+		margin: 0px;
+		padding: 0px;
+	}
+}
+
+/*ie7 work around for using display: inline-block on the follow icons*/
+.ie7 .follow-icon-facebook, .ie7 .follow-icon-youtube, .ie7 .follow-icon-flickr, .ie7 .follow-icon-twitter, .ie7 .follow-icon-googleplus, .ie7 .follow-icon-pinterest, .ie7 .follow-icon-instagram, .ie7 .follow-icon-blog, .ie7 #footer .brochures > a {
+    display: block;
+    float: left;
+    zoom: 1;
+}
+.ie7 #footer .brochures > a {
+	float: none;
+}
+
+
+/* =============================================================================
+   Popup and Alert Windows
+   ========================================================================== */
+
+/*
+ * Inactivity Warning Popup   --   NEED TO LOOK AT TO MAKE SURE ITS OKAY
+ */
+#inactivity-warning {
+	position: absolute;
+	top: 100px;
+	right: 0;
+	width: 290px;
+	height: 175px;
+	border: 1px solid #8596b1;
+	padding: 5px 20px 0 10px;
+	margin-bottom: 5px;
+	background: url(/images/global/register_block_bg.gif) repeat-x left 170px #f7f7f7;
+	text-align: left;
+	-webkit-box-shadow: 2px 7px 8px #666;
+	-moz-box-shadow: 2px 7px 8px #666;
+	box-shadow: 2px 7px 8px #666;
+	z-index:5011
+}
+#inactivity-warning h3 {
+	font-size: 1.4166em; /*17px*/
+	font-weight: 200;
+	color: #333;
+	border-bottom: 1px solid #CCC;
+	padding-bottom: 2px;
+	margin:4px 15px 12px 0;
+}
+#inactivity-warning .error {
+	color:#DB0000;
+	font-size:1em; /*12px*/
+	padding:2px 10px 18px 0
+}
+a.global-button {
+	background:#224d91 url(/images/global/sign_in_btn_bg.gif) no-repeat 2px 3px;
+	padding:2px 7px 2px 16px;
+	text-transform:uppercase;
+	border-radius:8px;
+	color:#fff;
+	text-decoration:none
+}
+a.global-button:hover {
+	text-decoration:none
+}
+a.global-button:focus {
+	color:#fff
+}
+#white-overlay {
+	background-color:#fff;
+	height:100%;
+	left:0;
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index:5010;
+	opacity:0.98;
+	filter: alpha(opacity=98);
+	zoom: 1;
+	overflow:hidden;
+}
+* html #white-overlay {
+	position:absolute;
+	top:0;
+	left:0;
+	height:1000px;
+}
+.close-window {
+	clear: both;
+	padding: 25px 0 10px;
+	text-align: center;
+}
+
+/* Magnific Popup Signin / Special Offers Lightboxes */
+.MFP-header-SO .mfp-iframe-holder .mfp-content {
+	max-width:640px;
+	min-height:715px;
+}
+.MFP-header-SO .mfp-iframe-holder .mfp-content iframe, .special-offers .mfp-iframe-scaler iframe {
+	background-color: #f4f7f9;
+}
+.special-offers .mfp-content {
+	min-height: 1140px;
+}
+.special-offers.no-trades .mfp-content {
+	min-height: 590px;
+}
+.special-offers .mfp-content, .special-offers .mfp-close-wrapper {
+	max-width: 640px;
+}
+.special-offers .mfp-close-wrapper {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: 0 auto;
+}
+@media (min-width: 410px) {
+	.special-offers .mfp-content {
+		min-height: 1040px;
+	}
+}
+@media (min-width: 480px) {
+	.special-offers.no-trades .mfp-content {
+		min-height: 440px;
+	}
+}
+@media (min-width: 670px) {
+	.special-offers .mfp-close-wrapper {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.special-offers .mfp-content {
+		min-height: 715px;
+	}
+	.special-offers.no-trades .mfp-content {
+		min-height: 420px;
+	}
+}
+.MFP-header-SI .mfp-iframe-holder .mfp-content {
+	max-width:640px;
+	min-height:497px;
+}
+.MFP-header-SO .mfp-close-wrapper, .MFP-header-SI .mfp-close-wrapper {
+	margin-left:auto;
+	margin-right:auto;
+	max-width:640px;
+}
+
+
+/*
+ * Sign-in Popup
+ */
+#sign-in-box {
+	position: absolute;
+	top: 42px;
+	right: 0;
+	background: #f7f7f7;
+	width: 290px;
+	height: 175px;
+	text-align: left;
+	padding: 5px 20px 0 10px;
+	margin-bottom: 5px;
+	border: 1px solid #8596b1;
+	z-index: 300;
+	-webkit-box-shadow: 2px 7px 8px #666;
+	-moz-box-shadow: 2px 7px 8px #666;
+	box-shadow: 2px 7px 8px #666;
+	display: none;
+}
+#sign-in-box h3 {
+	font-size: 1.3076em; /*17px*/
+	line-height: .9411em;
+	color: #333;
+	border-bottom: 1px solid #CCC;
+	padding: 0 0 2px 18px;
+	margin: 4px 15px 12px 0;
+	font-weight: 200;
+	background: url(/images/global/sprite_header-nav-footer.png) no-repeat -135px -165px;
+}
+#sign-in-box .close-box {
+	position: absolute;
+	top: 4px;
+	right: 9px;
+	height: 13px;
+	width: 13px;
+	padding: 4px;
+	text-align: center;
+	cursor:pointer;
+}
+#sign-in-box .close-box img {
+	background: url(/images/global/sprite_header-nav-footer.png) no-repeat -135px -190px;
+}
+#register-block {
+	position:absolute;
+	left:0;
+	bottom:0;
+	padding: 7px 41px;
+	margin: 12px 0 0 0;
+	width: 239px;
+	background: url(/images/global/sprite_header-nav-footer.png) repeat-x 0 -125px #014c8f;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3470a5), color-stop(100%,#014c8f));
+	background: -webkit-linear-gradient(top, #3470a5 0%, #014c8f 100%);
+	background: -moz-linear-gradient(top, #3470a5 0%, #014c8f 100%);
+	background: -ms-linear-gradient(top, #3470a5 0%, #014c8f 100%);
+	background: -o-linear-gradient(top, #3470a5 0%, #014c8f 100%);
+	color: #FFF;
+	text-align: center;
+}
+#register-block a {
+	color: #FFF;
+	text-transform: uppercase;
+	font-size: 13px;
+	padding-left: 20px;
+	text-decoration:none
+}
+#register-block a:hover {
+	text-decoration:none
+}
+#loading-symbol {
+	position: absolute;
+	top: 75px;
+	left: 135px;
+	width: 50px;
+	display: none;
+}
+#iframe-page {
+	height:115px !important;
+	width:300px;
+}
+
+/*
+ * UK Cookie Warning
+ */
+#uk-notice {
+	background: #fff;
+	bottom: -125px;
+	border: 1px solid #b2b2b2;
+	-moz-box-shadow: 5px 5px 10px #333333;
+	-webkit-box-shadow: 5px 5px 10px #333333;
+	box-shadow: 5px 5px 10px #333333;
+	padding: 20px;
+	position: fixed;
+	right: 15px;
+	width: 300px;
+	z-index: 99999;
+}
+#close-uk-notice {
+	display: block;
+	cursor: pointer;
+	height: 50px;
+	position: absolute;
+	right: -10px;
+	top: -23px;
+	width: 110px;
+}
+#close-uk-notice:hover {
+	cursor: pointer;
+}
+
+/* Koi Bar */
+#koi-alert {
+	background:#3B3B3B;
+	-webkit-box-shadow: 0px -10px 20px 0px #000;
+	box-shadow: 0px -10px 20px 0px #000;
+	clear:both;
+	padding:10px 0;
+	position:fixed;
+	width:100%;
+	z-index:999;
+}
+#koi-alert > div {
+	width:100%;
+	margin:0 auto;
+	padding:0 10px;
+	text-align:center;
+}
+#koi-alert a {
+	color:#999999;
+	text-decoration:none;
+}
+@media screen and (min-width:640px) {
+	/* Koi Bar */
+	#koi-alert > div {
+		text-align:right;
+	}
+}
+
+@media screen and (min-width:768px) {
+	/* Koi Bar */
+	#koi-alert {
+		position:relative;
+	}
+	#koi-alert > div {
+		padding:0 40px 0 0;
+	}
+}
+
+@media screen and (min-width:960px) {
+	/* Koi Bar */
+	#koi-alert > div {
+		width:960px;
+	}
+}
+
+
+/* =============================================================================
+   Print view
+   ========================================================================== */
+@media print {
+    .headerbar, .header-site-search-container, .navbar-btn-menu, .navbar-menu, .navbar-search-cruises, #princess-footer {
+        display: none;
+    }
+	.navbar-logo {
+		display: block;
+	}
+}
