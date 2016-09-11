@@ -1,8 +1,0 @@
-@charset "utf-8";
-/* Breadcrumb CSS Document */
-
-.breadcrumb-new{background:#f5f5f5 repeat-x; color:#666; font:11px Arial,Helvetica,sans-serif; height:22px; line-height:22px; margin:0 0 15px; overflow:hidden; padding:0; width:100%; clear:both}
-.breadcrumb-new a{background:url(../../images/global/breadcrumb_arrow.gif) no-repeat right; color:#0054a0; display:inline-block; outline:none; padding-right:20px; text-decoration:none}
-.breadcrumb-new li{background:url(../../images/global/breadcrumb_bg.gif) repeat-x; display:inline-block; float:left; list-style-type:none; padding-left:10px}
-.breadcrumb-new li.current{background:none}
-.breadcrumb-new li.prev-page{background:url(../../images/global/breadcrumb_arrow_last.gif) no-repeat right}
