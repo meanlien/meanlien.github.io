@@ -24,14 +24,17 @@
 			$toggleHide.toggleClass("toolbar-hide-lower");
 			$hideText.toggleClass("hide-before hidden");
 		}
+
 	if(!sessionStorage.getItem('toolbarHidden')){
 		sessionStorage.setItem('toolbarHidden', 'false');
 	}
 		if(sessionStorage.getItem('toolbarHidden')=='true'){
 				toolbarLoad();
+				$('.action-toolbar').removeClass('hide');
 		}else{
-			$.getScript('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5796297c9cb7080d');
+			$.getScript('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5796297c9cb7080d#async=1');
 			addthis_loaded= true;
+			$('.action-toolbar').removeClass('hide');
 			//load scripts
 		}
 		$hideButton.click(function(){
@@ -47,7 +50,7 @@
 				sessionStorage.setItem('toolbarHidden', 'false');
 			}
 			if(addthis_loaded == false){
-				$.getScript('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5796297c9cb7080d');
+				$.getScript('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5796297c9cb7080d#async=1');
 				addthis_loaded=true;
 			}
 		});
@@ -97,7 +100,16 @@
 		if($('.show-chat').length > 0){
 			$('.toolbar-chat').removeClass('hidden');
 		}
+		if($('.disable-brochure-link').length === 0 && $('.toolbar-brochure').length > 0){
+			if(localeData == undefined || localeData == null){
+				$(document).on('getLocale', function(){
+					initBrochureToolbar($('.action-toolbar'));
+				});
+			}else{
+				initBrochureToolbar($('.action-toolbar'));
+			}
 
+	};
 	function initBrochureToolbar($container) {
 		if (localeData.brochures == 'true') {
 			var getBrochureUrl = $('#navbar').find('.navbar-brochure').attr('href');
