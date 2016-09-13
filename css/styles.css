@@ -1,0 +1,101 @@
+*{
+  box-sizing: border-box;
+}
+h1{
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  margin: 0px;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+#background{
+  background-color: #787878;
+  color: white;
+  max-width:1700px;
+  margin: auto;
+  font-family: arial;
+}
+#container{
+  max-width: 960px;
+  margin: auto;
+}
+.row-header{
+  background-color: #9a9a9a;
+  height: 41px;
+}
+.title-link{
+  text-decoration: none;
+}
+.headerTitle:hover{
+  background-color: #787878;
+}
+.headerTitle{
+  color: white;
+  display: inline-block;
+  padding: 2px;
+}
+
+.header-tab-list{
+  font-size: 18px;
+  list-style: none;
+  display: inline;
+}
+.header-item{
+  display:inline-block;
+  padding: 10px;
+  vertical-align: top;
+}
+.header-item:hover{
+  background-color: #787878;
+}
+.header-link{
+  color: white;
+  text-decoration: none;
+}
+.active-tab{
+  background-color: #787878;
+}
+.project-item{
+  display:inline-block;
+  background-color: #898989;
+}
+.projectImg{
+  float: left;
+  margin: 10px;
+}
+.project-title{
+  letter-spacing: 1px;
+  text-align: center;
+}
+.project-text{
+  letter-spacing: 1px;
+}
+.link-view{
+  color:white;
+  text-decoration: none;
+}
+.asteroid-game{
+  position: relative;
+  left: 25%;
+}
+
+@media screen and (max-width: 900px){
+
+}
+@media screen and (max-width: 768px){
+  .title{
+    margin-left: 15px;
+  }
+  .projectImg{
+    margin: 0px;
+  }
+}
