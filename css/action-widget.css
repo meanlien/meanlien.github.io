@@ -260,7 +260,6 @@
 }
 .link-text{
 	padding: 5px 15px;
-	margin-bottom: -7px;
 }
 .printer-link-text{
 	padding: 5px 15px 5px 15px;
@@ -276,7 +275,6 @@
 	background-color: #006C90;
 }
 .toolbar-item + .toolbar-item{
-	padding-bottom: 5.5px;
 	border-left: 1px solid white;
 }
 .action-toolbar-maxWidth{
@@ -465,12 +463,10 @@
 		padding-right: 10px;
 
 	}
-
 	.link-text{
 		padding: 6px 10px;
 	}
 	.toolbar-item + .toolbar-item{
-		padding-bottom: 5px;
 		border-left: 1px solid white;
 	}
 	.action-toolbar-list{
@@ -517,7 +513,7 @@
 		position: absolute;
 		height: 20px;
 		left: 5px;
-		top: -23px;
+		top: -20px;
 		-moz-border-radius:3px;
 		-webkit-border-radius:3px;
 		border-radius: 3px 3px 0px 0px;
@@ -527,8 +523,8 @@
 	.toolbar-hide-raised{
 		position: absolute;
 		height: 20px;
-		left: 5px;
-		top: -23px;
+		left: 0px;
+		top: -20px;
 		-moz-border-radius:3px;
 		-webkit-border-radius:3px;
 		border-radius: 3px 3px 0px 0px;
