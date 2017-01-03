@@ -109,6 +109,7 @@ body{
 .project-item{
   display:inline-block;
   width:48%;
+  vertical-align: top;
 }
 .projectImg{
   float: left;
